@@ -12,9 +12,9 @@ export const Home = () => {
           alt="Elysium Retreat Suite"
           className="hero-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#fffef2]/80 to-transparent flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#fffef2]/95 via-[#fffef2]/40 to-transparent flex items-end">
           <div className="container pb-20">
-            <h1 className="hero-large max-w-2xl mb-4">
+            <h1 className="hero-large max-w-2xl mb-4 text-[#333333]">
               Your Private Sanctuary in the Heart of Thessaloniki
             </h1>
           </div>
