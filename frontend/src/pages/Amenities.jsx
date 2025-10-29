@@ -1,23 +1,89 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Sparkles, Utensils, Wine, MapPin } from 'lucide-react';
 
 export const Amenities = () => {
-  const standardAmenities = [
-    'King Size Bed with anatomic mattress',
-    'Premium linens and towels',
-    'Fully-equipped kitchen with modern appliances',
-    'Nespresso Coffee Machine',
-    '50" Smart TV with Netflix',
-    'High-Speed Wi-Fi throughout',
-    'Air Conditioning & Heating',
-    'Walk-in Shower with premium toiletries',
-    'Washer & Dryer',
-    'Iron & Ironing Board',
-    'Self Check-in for your convenience',
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  };
+
+  const essentialAmenities = [
+    '70 sq.m. (753 sq.ft.) spacious apartment',
+    'King size bed with anatomic mattress',
+    'Second full bed in separate bedroom',
+    'Sofa bed in living room (sleeps 5 guests total)',
+    'Premium linens and bath towels',
+    'Hypo-allergenic bedding',
+  ];
+
+  const kitchenDining = [
+    'Fully-equipped kitchen',
+    'Refrigerator',
+    'Stovetop',
+    'Oven',
+    'Nespresso Coffee Machine with capsules',
+    'Dishwasher',
+    'Microwave',
+    'Kitchen utensils and cookware',
+    'Dining table with seating',
+    'Toaster'
+  ];
+
+  const entertainmentTech = [
+    '50\" Flat-screen Smart TV',
+    'Streaming services (Netflix, etc.)',
+    'High-speed Free Wi-Fi throughout',
+    'Work desk',
+    'Telephone'
+  ];
+
+  const comfortClimate = [
+    'Air conditioning',
+    'Heating',
+    'Soundproofing',
+    'Terrace',
+    'Balcony with city and garden views',
+    'Private entrance',
+    'Entire apartment to yourself'
+  ];
+
+  const bathroomAmenities = [
+    'Walk-in shower',
+    'Premium toiletries',
     'Hairdryer',
-    'Fresh towels and bed linens',
-    'Cleaning supplies',
-    'Dedicated workspace'
+    'Fresh towels',
+    'Bidet',
+    'Toilet paper'
+  ];
+
+  const laundryStorage = [
+    'Washing machine',
+    'Iron and ironing board',
+    'Drying rack for clothes',
+    'Clothes rack'
+  ];
+
+  const accessibilityServices = [
+    'Elevator access',
+    'Private check-in/check-out',
+    'Self check-in with keyless entry',
+    'Contactless check-in'
+  ];
+
+  const safetyFeatures = [
+    'Fire extinguisher',
+    'Smoke alarms',
+    'Carbon monoxide alarm',
+    'First aid kit'
+  ];
+
+  const additionalServices = [
+    'Non-smoking throughout',
+    'Family rooms',
+    'Cleaning supplies provided',
+    'Trash cans',
+    'Socket near the bed'
   ];
 
   const experiences = [
@@ -46,7 +112,13 @@ export const Amenities = () => {
   return (
     <div>
       {/* Header */}
-      <section className="section-padding-small">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small"
+      >
         <div className="container">
           <h1 className="hero-large mb-6 text-center">
             Amenities & Experiences
@@ -55,25 +127,143 @@ export const Amenities = () => {
             Everything you need for a comfortable, memorable stay—and the opportunity to create truly exceptional moments.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Standard Amenities */}
+      {/* Comprehensive Amenities */}
       <section className="section-padding-small bg-[#f6f5e8]">
         <div className="container">
-          <h2 className="heading-1 mb-12 text-center">Included Amenities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {standardAmenities.map((amenity, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
-                <span className="body-regular">{amenity}</span>
+          <motion.h2 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={fadeInUpVariants}
+            className="heading-1 mb-16 text-center"
+          >
+            Comprehensive Amenities
+          </motion.h2>
+          
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ staggerChildren: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto"
+          >
+            {/* Essential Features */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Essential Features</h3>
+              <div className="space-y-3">
+                {essentialAmenities.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </motion.div>
+
+            {/* Kitchen & Dining */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Kitchen & Dining</h3>
+              <div className="space-y-3">
+                {kitchenDining.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Entertainment & Technology */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Entertainment & Technology</h3>
+              <div className="space-y-3">
+                {entertainmentTech.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Comfort & Climate */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Comfort & Climate</h3>
+              <div className="space-y-3">
+                {comfortClimate.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Bathroom */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Bathroom</h3>
+              <div className="space-y-3">
+                {bathroomAmenities.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Laundry & Storage */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Laundry & Storage</h3>
+              <div className="space-y-3">
+                {laundryStorage.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Accessibility & Services */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Accessibility & Services</h3>
+              <div className="space-y-3">
+                {accessibilityServices.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Safety Features */}
+            <motion.div variants={fadeInUpVariants}>
+              <h3 className="heading-2 mb-6">Safety Features</h3>
+              <div className="space-y-3">
+                {safetyFeatures.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#333333] rounded-full mt-2 flex-shrink-0" />
+                    <span className="body-regular">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Curated Experiences */}
-      <section className="section-padding">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding"
+      >
         <div className="container">
           <h2 className="heading-1 mb-8 text-center">Curated Experiences</h2>
           <p className="body-large text-[#666666] text-center mb-16 max-w-2xl mx-auto">
@@ -89,10 +279,16 @@ export const Amenities = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="section-padding-small bg-[#f6f5e8]">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small bg-[#f6f5e8]"
+      >
         <div className="container text-center">
           <h2 className="hero-medium mb-8">
             Create Your Perfect Experience
@@ -104,7 +300,7 @@ export const Amenities = () => {
             Get in Touch
           </a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
