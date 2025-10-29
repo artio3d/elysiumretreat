@@ -5,48 +5,51 @@ import { Menu, X } from 'lucide-react';
 export const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isHomePage = location.pathname === '/';
 
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/suite', label: 'The Suite' },
-    { path: '/amenities', label: 'Amenities' },
-    { path: '/area', label: 'The Area' },
-    { path: '/gallery', label: 'Gallery' },
-    { path: '/about', label: 'About Us' },
-    { path: '/contact', label: 'Contact' }
-  ];
+  const handleAnchorClick = (e, anchor) => {
+    e.preventDefault();
+    if (!isHomePage) {
+      window.location.href = `/#${anchor}`;
+    } else {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="navigation-header">
       <Link to="/" className="navigation-logo">
         <div className="flex flex-col">
-          <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: '600', color: '#C86432', lineHeight: '1.2' }}>
-            Elysium
-          </span>
-          <span style={{ fontFamily: 'Lato, sans-serif', fontSize: '14px', fontWeight: '400', color: '#707038', letterSpacing: '0.1em', lineHeight: '1.2' }}>
-            RETREAT
-          </span>
+          <span className="logo-elysium">Elysium</span>
+          <span className="logo-retreat">RETREAT</span>
         </div>
       </Link>
 
       {/* Desktop Navigation */}
       <nav className="navigation-menu hidden lg:flex">
-        {navLinks.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`navigation-link ${location.pathname === link.path ? 'active' : ''}`}
-          >
-            {link.label}
-          </Link>
-        ))}
+        <a href="/#home" onClick={(e) => handleAnchorClick(e, 'home')} className="navigation-link">
+          Home
+        </a>
+        <Link to="/area" className="navigation-link">
+          The Area
+        </Link>
+        <Link to="/about" className="navigation-link">
+          About Us
+        </Link>
+        <a href="/#contact" onClick={(e) => handleAnchorClick(e, 'contact')} className="navigation-link">
+          Contact
+        </a>
       </nav>
 
       {/* Utilities */}
       <div className="navigation-utilities">
-        <Link to="/contact" className="btn-primary hidden sm:inline-flex">
+        <a href="/#contact" onClick={(e) => handleAnchorClick(e, 'contact')} className="btn-primary hidden sm:inline-flex">
           Book Your Stay
-        </Link>
+        </a>
         
         {/* Mobile Menu Toggle */}
         <button
@@ -62,23 +65,41 @@ export const Header = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-[73px] bg-[#fffef2] z-50 lg:hidden">
           <nav className="flex flex-col p-8 space-y-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="navigation-text text-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <a
+              href="/#home"
+              onClick={(e) => handleAnchorClick(e, 'home')}
+              className="navigation-text text-lg"
+            >
+              Home
+            </a>
             <Link
-              to="/contact"
-              className="btn-primary mt-8"
+              to="/area"
+              className="navigation-text text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book Your Stay
+              The Area
             </Link>
+            <Link
+              to="/about"
+              className="navigation-text text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <a
+              href="/#contact"
+              onClick={(e) => handleAnchorClick(e, 'contact')}
+              className="navigation-text text-lg"
+            >
+              Contact
+            </a>
+            <a
+              href="/#contact"
+              onClick={(e) => handleAnchorClick(e, 'contact')}
+              className="btn-primary mt-8"
+            >
+              Book Your Stay
+            </a>
           </nav>
         </div>
       )}
