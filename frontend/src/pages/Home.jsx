@@ -162,7 +162,7 @@ export const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
-                className="flex flex-col items-center text-center p-6 border border-[#ebeade] hover:border-[#C86432] transition-smooth hover-lift"
+                className="flex flex-col items-center text-center p-6 border border-[#ebeade] hover:border-[#C86432] transition-smooth hover-lift rounded-xl"
               >
                 <div className="mb-4" style={{ color: '#C86432' }}>
                   {amenity.icon}
