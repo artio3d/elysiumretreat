@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wifi, Tv, Coffee, Wind, Home, Lock } from 'lucide-react';
+import { Wifi, Tv, Coffee, Wind, Home as HomeIcon, Lock } from 'lucide-react';
 import { ImageCarousel } from '../components/ImageCarousel';
 
 export const Home = () => {
