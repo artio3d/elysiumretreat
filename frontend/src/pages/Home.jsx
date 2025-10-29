@@ -175,7 +175,7 @@ export const Home = () => {
         </div>
       </motion.section>
 
-      {/* SECTION 4: Contact Form */}
+      {/* SECTION 4: Contact Section */}
       <motion.section 
         id="contact"
         initial="hidden"
@@ -194,20 +194,31 @@ export const Home = () => {
           
           <div className="max-w-4xl mx-auto">
             {/* Booking Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {/* Direct Booking */}
-              <div className="border-2 border-[#C86432] p-8">
-                <h3 className="heading-2 mb-4">Direct Booking</h3>
-                <p className="body-regular text-[#666666] mb-6">
-                  Book directly with us for the best rates and personalized service.
-                </p>
-                <div className="inline-block px-4 py-2 bg-[#C86432] text-[#fffef2]">
-                  <span className="body-small font-bold">RECOMMENDED</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Direct Contact */}
+              <div className="border-2 border-[#C86432] p-8 rounded-xl">
+                <h3 className="heading-2 mb-6">Direct Contact</h3>
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="body-small text-[#666666] mb-2">Phone / WhatsApp</p>
+                    <a href="tel:+306978076850" className="body-large font-semibold text-[#333333] hover:text-[#C86432] transition-smooth">
+                      +30 697 807 6850
+                    </a>
+                  </div>
+                  <div>
+                    <p className="body-small text-[#666666] mb-2">Email</p>
+                    <a href="mailto:contact@elysiumstay.com" className="body-large font-semibold text-[#333333] hover:text-[#C86432] transition-smooth">
+                      contact@elysiumstay.com
+                    </a>
+                  </div>
                 </div>
+                <p className="body-small text-[#666666] italic">
+                  (Recommended for better price)
+                </p>
               </div>
 
               {/* Booking.com */}
-              <div className="border border-[#bcbbb4] p-8">
+              <div className="border border-[#bcbbb4] p-8 rounded-xl">
                 <h3 className="heading-2 mb-4">Book via Booking.com</h3>
                 <p className="body-regular text-[#666666] mb-6">
                   Reserve through a trusted platform with instant confirmation.
