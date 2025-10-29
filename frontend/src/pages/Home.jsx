@@ -35,7 +35,7 @@ export const Home = () => {
 
   const amenities = [
     {
-      icon: <Home size={32} />,
+      icon: <HomeIcon size={32} />,
       title: '70 sq.m. Space',
       description: 'Spacious apartment designed for comfort'
     },
