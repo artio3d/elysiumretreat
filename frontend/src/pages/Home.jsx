@@ -98,14 +98,14 @@ export const Home = () => {
         className="section-padding"
       >
         <div className="container">
-          <h2 className="hero-medium mb-4 text-center" style={{ color: '#C86432' }}>
-            Immerse Yourself in the Space
+          <h2 className="hero-large mb-4 text-center" style={{ color: '#C86432' }}>
+            Step Inside Your Sanctuary
           </h2>
-          <p className="body-large text-[#666666] text-center mb-16 max-w-3xl mx-auto">
+          <p className="body-large text-[#666666] text-center mb-20 max-w-3xl mx-auto">
             Experience your future sanctuary through our immersive 3D tour and curated photography. Explore every detail before you arrive.
           </p>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Matterport 3D Tour */}
             <div>
               <h3 className="heading-2 mb-6" style={{ color: '#707038' }}>Virtual 3D Tour</h3>
