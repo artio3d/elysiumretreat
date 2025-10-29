@@ -27,9 +27,9 @@ export const Footer = () => {
                 <Mail size={16} />
                 <span className="body-regular">info@elysiumretreat.com</span>
               </a>
-              <a href="tel:+302310000000" className="flex items-center gap-3 text-[#666666] hover:text-[#333333] transition-smooth">
+              <a href="tel:+306978076850" className="flex items-center gap-3 text-[#666666] hover:text-[#333333] transition-smooth">
                 <Phone size={16} />
-                <span className="body-regular">+30 231 000 0000</span>
+                <span className="body-regular">+30 697 807 6850</span>
               </a>
               <a
                 href="https://maps.app.goo.gl/9kMGhxrQjmSf4Q4h7"
@@ -48,19 +48,19 @@ export const Footer = () => {
             <h4 className="heading-3 mb-6">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/elysium.stay/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-[#bcbbb4] hover:bg-[#333333] hover:text-[#fffef2] hover:border-[#333333] transition-smooth"
+                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://web.facebook.com/profile.php?id=61577150067312"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-[#bcbbb4] hover:bg-[#333333] hover:text-[#fffef2] hover:border-[#333333] transition-smooth"
+                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
