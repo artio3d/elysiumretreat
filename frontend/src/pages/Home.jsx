@@ -118,7 +118,7 @@ export const Home = () => {
         </div>
       </motion.section>
 
-      {/* SECTION 2B: Photo Gallery - Masonry Grid */}
+      {/* SECTION 2B: Photo Gallery - Carousel */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -131,25 +131,9 @@ export const Home = () => {
             Discover Every Detail
           </h2>
           
-          {/* Masonry Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="image-card hover-lift"
-                style={{ height: index % 3 === 0 ? '400px' : '300px' }}
-              >
-                <img 
-                  src={image} 
-                  alt={`Elysium Retreat ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
+          {/* Carousel */}
+          <div className="max-w-5xl mx-auto">
+            <ImageCarousel images={carouselImages} />
           </div>
         </div>
       </motion.section>
