@@ -19,7 +19,11 @@ export const Header = () => {
   return (
     <header className="navigation-header">
       <Link to="/" className="navigation-logo">
-        Elysium Retreat
+        <img 
+          src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/u386b7x4_ChatGPT%20Image%206%20%CE%99%CE%BF%CF%85%CE%BD%202025%2C%2002_10_00%20%CE%BC.%CE%BC..png" 
+          alt="Elysium Retreat Logo" 
+        />
+        <span>Elysium Retreat</span>
       </Link>
 
       {/* Desktop Navigation */}
