@@ -3,7 +3,7 @@
     background: #C86432;
     color: #fffef2;
     border: 1px solid #C86432;
-    border-radius: 0px;
+    border-radius: 10px;
     padding: 19px 23px;
     min-width: 210px;
     height: 60px;
@@ -34,7 +34,7 @@
     background: transparent;
     border: 1px solid #707038;
     color: #707038;
-    border-radius: 0px;
+    border-radius: 10px;
     padding: 19px 23px;
     min-width: 210px;
     height: 60px;
