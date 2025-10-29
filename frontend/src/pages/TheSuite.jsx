@@ -106,10 +106,16 @@ export const TheSuite = () => {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Photo Gallery */}
-      <section className="section-padding">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding"
+      >
         <div className="container">
           <h2 className="heading-1 mb-12 text-center">Curated Gallery</h2>
           <div className="masonry-grid">
@@ -120,10 +126,16 @@ export const TheSuite = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features */}
-      <section className="section-padding-small bg-[#f6f5e8]">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small bg-[#f6f5e8]"
+      >
         <div className="container">
           <h2 className="heading-1 mb-12 text-center">Suite Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -135,10 +147,16 @@ export const TheSuite = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding"
+      >
         <div className="container text-center">
           <h2 className="hero-medium mb-8">
             Reserve Your Experience
