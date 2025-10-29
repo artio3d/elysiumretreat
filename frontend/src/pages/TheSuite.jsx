@@ -168,7 +168,7 @@ export const TheSuite = () => {
             Book Your Stay
           </a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
