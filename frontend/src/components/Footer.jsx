@@ -8,8 +8,22 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#f6f5e8] border-t border-[#bcbbb4]">
-      <div className="container py-20">
+    <footer className="relative bg-[#f6f5e8]">
+      {/* Wave Separator */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ lineHeight: 0, transform: 'translateY(-99%)' }}>
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          style={{ width: '100%', height: '80px' }}
+        >
+          <path
+            d="M0,0 C150,60 350,60 600,30 C850,0 1050,0 1200,30 L1200,120 L0,120 Z"
+            fill="#f6f5e8"
+          />
+        </svg>
+      </div>
+
+      <div className="container py-24 pt-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact */}
           <div>
