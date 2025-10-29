@@ -1,8 +1,8 @@
-/* Primary Button - Sharp rectangular with 0px border radius */
+/* Primary Button - Sharp rectangular with brand terracotta color */
 .btn-primary {
-    background: transparent;
-    color: var(--interactive-base);
-    border: 1px solid var(--interactive-base);
+    background: #C86432;
+    color: #fffef2;
+    border: 1px solid #C86432;
     border-radius: 0px;
     padding: 19px 23px;
     min-width: 210px;
@@ -18,42 +18,44 @@
 }
 
 .btn-primary:hover {
-    background: var(--interactive-base);
-    color: var(--bg-primary);
+    background: #B05528;
+    border-color: #B05528;
+    color: #fffef2;
 }
 
 .btn-primary:active {
-    background: var(--interactive-hover);
-    color: var(--bg-primary);
+    background: #9A4A20;
+    border-color: #9A4A20;
+    color: #fffef2;
 }
 
-/* Secondary Button - Text only with underline */
+/* Secondary Button - Olive green outline */
 .btn-secondary {
-    background: none;
-    border: none;
-    padding: 12px 16px;
+    background: transparent;
+    border: 1px solid #707038;
+    color: #707038;
+    border-radius: 0px;
+    padding: 19px 23px;
+    min-width: 210px;
+    height: 60px;
     font-size: 14px;
-    font-weight: 400;
-    color: var(--interactive-base);
+    font-weight: 700;
     cursor: pointer;
+    transition: all 0.2s cubic-bezier(.645,.045,.355,1);
     text-decoration: none;
-    position: relative;
-    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-secondary:after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    width: 0;
-    height: 1px;
-    background: var(--interactive-base);
-    transition: width 0.5s ease-in-out;
+.btn-secondary:hover {
+    background: #707038;
+    color: #fffef2;
 }
 
-.btn-secondary:hover:after {
-    width: calc(100% - 32px);
+.btn-secondary:active {
+    background: #5A5A2E;
+    border-color: #5A5A2E;
 }
 
 /* Icon Button - Text with arrow */
@@ -63,7 +65,7 @@
     padding: 8px 0;
     font-size: 14px;
     font-weight: 400;
-    color: var(--interactive-base);
+    color: #C86432;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -75,6 +77,10 @@
     width: 12px;
     height: 12px;
     transition: transform 0.2s ease;
+}
+
+.btn-icon:hover {
+    color: #B05528;
 }
 
 .btn-icon:hover svg {
@@ -99,6 +105,14 @@
     font-weight: 400;
     color: var(--text-primary);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navigation-logo img {
+    height: 40px;
+    width: auto;
 }
 
 .navigation-menu {
@@ -127,7 +141,7 @@
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--text-primary);
+    background: #C86432;
     transition: width 0.5s ease-in-out;
 }
 
@@ -264,4 +278,35 @@
         grid-template-columns: 1fr;
         gap: 24px;
     }
+}
+
+/* Carousel Navigation */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 254, 242, 0.9);
+    border: 1px solid #C86432;
+    color: #C86432;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: #C86432;
+    color: #fffef2;
+}
+
+.carousel-button.prev {
+    left: 16px;
+}
+
+.carousel-button.next {
+    right: 16px;
 }

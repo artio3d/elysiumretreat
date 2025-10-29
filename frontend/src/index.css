@@ -23,6 +23,12 @@ code {
     --bg-secondary: #f6f5e8;
     --bg-subtle: #ebeade;
     
+    /* Brand Colors - From Logo */
+    --brand-terracotta: #C86432;
+    --brand-olive: #707038;
+    --brand-terracotta-hover: #B05528;
+    --brand-olive-hover: #5A5A2E;
+    
     /* Text Hierarchy - Rich contrast */
     --text-primary: #333333;
     --text-secondary: #666666;
@@ -30,9 +36,9 @@ code {
     --text-meta: #4a4a4a;
     
     /* Interactive States - Minimal emphasis */
-    --interactive-base: #333333;
-    --interactive-hover: #000000;
-    --focus-outline: #252525;
+    --interactive-base: #C86432;
+    --interactive-hover: #B05528;
+    --focus-outline: #C86432;
     
     /* Borders & Separators */
     --border-light: #bcbbb4;
@@ -50,7 +56,7 @@ code {
     --card-foreground: 0 0% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
-    --primary: 0 0% 20%;
+    --primary: 19 65% 49%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 20%;
@@ -62,7 +68,7 @@ code {
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 20%;
+    --ring: 19 65% 49%;
     --radius: 0rem;
   }
 }
