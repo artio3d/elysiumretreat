@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Eye, Sparkles, MapPin } from 'lucide-react';
+import { Wifi, Tv, Coffee, Wind, Home, Lock } from 'lucide-react';
+import { ImageCarousel } from '../components/ImageCarousel';
 
 export const Home = () => {
   const fadeInUpVariants = {
@@ -9,13 +10,69 @@ export const Home = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   };
 
+  const carouselImages = [
+    {
+      url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/olpbcj2y_DSC_0754.jpg',
+      alt: 'Living and dining area'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/k1sgno7v_DSC_0648.jpg',
+      alt: 'Serene bedroom'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/e62wvh9t_DSC_0769.jpg',
+      alt: 'Modern kitchen'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/rmxjodi4_DSC_0728.jpg',
+      alt: 'Elegant bathroom'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/py256jjy_DSC_0695.jpg',
+      alt: 'Bedroom details'
+    }
+  ];
+
+  const amenities = [
+    {
+      icon: <Home size={32} />,
+      title: '70 sq.m. Space',
+      description: 'Spacious apartment designed for comfort'
+    },
+    {
+      icon: <Wifi size={32} />,
+      title: 'High-Speed Wi-Fi',
+      description: 'Free unlimited internet access'
+    },
+    {
+      icon: <Tv size={32} />,
+      title: 'Smart TV',
+      description: '50" with Netflix and streaming services'
+    },
+    {
+      icon: <Coffee size={32} />,
+      title: 'Nespresso Machine',
+      description: 'Premium coffee with capsules included'
+    },
+    {
+      icon: <Wind size={32} />,
+      title: 'Climate Control',
+      description: 'Air conditioning and heating throughout'
+    },
+    {
+      icon: <Lock size={32} />,
+      title: 'Self Check-in',
+      description: 'Contactless keyless entry system'
+    }
+  ];
+
   return (
     <div>
       {/* Hero Section */}
       <section className="relative">
         <img
-          src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/k1sgno7v_DSC_0648.jpg"
-          alt="Elysium Retreat Suite"
+          src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/3qsq388b__NVD6519.JPG"
+          alt="Elysium Retreat Living Room"
           className="hero-image"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#fffef2]/95 via-[#fffef2]/40 to-transparent flex items-end">
@@ -32,186 +89,97 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Three Pillars Section */}
-      <section className="section-padding">
-        <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {/* Block 1: See the Space */}
-            <motion.div variants={fadeInUpVariants}>
-              <Link 
-                to="/suite#tour" 
-                className="group block border border-[#bcbbb4] hover:border-[#333333] transition-smooth overflow-hidden h-full"
-              >
-                <div className="relative h-[300px] overflow-hidden">
-                  <img
-                    src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/olpbcj2y_DSC_0754.jpg"
-                    alt="3D Virtual Tour"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/60 to-transparent flex items-end p-6">
-                    <div className="text-[#fffef2]">
-                      <Eye size={32} className="mb-3" />
-                      <h3 className="heading-2 text-[#fffef2] mb-2">See the Space</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6 bg-[#fffef2]">
-                  <p className="body-regular text-[#666666]">
-                    Take an immersive 3D tour and explore every corner of your future sanctuary.
-                  </p>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Block 2: Explore the Amenities */}
-            <motion.div variants={fadeInUpVariants}>
-              <Link 
-                to="/amenities" 
-                className="group block border border-[#bcbbb4] hover:border-[#333333] transition-smooth overflow-hidden h-full"
-              >
-                <div className="relative h-[300px] overflow-hidden">
-                  <img
-                    src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/e62wvh9t_DSC_0769.jpg"
-                    alt="Luxury Amenities"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/60 to-transparent flex items-end p-6">
-                    <div className="text-[#fffef2]">
-                      <Sparkles size={32} className="mb-3" />
-                      <h3 className="heading-2 text-[#fffef2] mb-2">Explore the Amenities</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6 bg-[#fffef2]">
-                  <p className="body-regular text-[#666666]">
-                    Luxury amenities for a perfect stay, from fully-equipped kitchen to premium entertainment.
-                  </p>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Block 3: Discover the Area */}
-            <motion.div variants={fadeInUpVariants}>
-              <Link 
-                to="/area" 
-                className="group block border border-[#bcbbb4] hover:border-[#333333] transition-smooth overflow-hidden h-full"
-              >
-                <div className="relative h-[300px] overflow-hidden bg-[#f6f5e8] flex items-center justify-center">
-                  <div className="w-full h-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.8!2d22.9444!3d40.6401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDM4JzI0LjQiTiAyMsKwNTYnMzkuOCJF!5e0!3m2!1sen!2sgr!4v1234567890"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0, pointerEvents: 'none' }}
-                      loading="lazy"
-                      title="Location Preview"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/60 to-transparent flex items-end p-6">
-                    <div className="text-[#fffef2]">
-                      <MapPin size={32} className="mb-3" />
-                      <h3 className="heading-2 text-[#fffef2] mb-2">Discover the Area</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6 bg-[#fffef2]">
-                  <p className="body-regular text-[#666666]">
-                    Located moments from the city's heart, with landmarks and attractions at your doorstep.
-                  </p>
-                </div>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Introduction */}
+      {/* Immerse Yourself Section - NEW */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={fadeInUpVariants}
-        className="section-padding-small bg-[#f6f5e8]"
+        className="section-padding"
       >
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="hero-medium mb-8">
-              Where Minimalist Design Meets Mediterranean Warmth
-            </h2>
-            <p className="body-large text-[#666666] mb-12">
-              Elysium Retreat offers an exclusive urban sanctuary where tranquility and comfort converge. Experience authentic Greek hospitality in a meticulously designed space that invites you to breathe, relax, and feel at home.
-            </p>
+          <h2 className="hero-medium mb-4 text-center" style={{ color: '#C86432' }}>
+            Immerse Yourself in the Space
+          </h2>
+          <p className="body-large text-[#666666] text-center mb-16 max-w-3xl mx-auto">
+            Experience your future sanctuary through our immersive 3D tour and curated photography. Explore every detail before you arrive.
+          </p>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Matterport 3D Tour */}
+            <div>
+              <h3 className="heading-2 mb-6" style={{ color: '#707038' }}>Virtual 3D Tour</h3>
+              <p className="body-regular text-[#666666] mb-6">
+                Navigate through the space at your own pace. Click, drag, and explore every corner of Elysium Retreat from anywhere in the world.
+              </p>
+              <div className="w-full" style={{ height: '600px' }}>
+                <iframe
+                  src="https://my.matterport.com/show/?m=gnCs6bcha8J"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="xr-spatial-tracking"
+                  title="Elysium Retreat 3D Tour"
+                  className="border-0"
+                />
+              </div>
+            </div>
+
+            {/* Right Column - Image Carousel */}
+            <div>
+              <h3 className="heading-2 mb-6" style={{ color: '#707038' }}>Photo Gallery</h3>
+              <p className="body-regular text-[#666666] mb-6">
+                Discover the thoughtful design details, premium finishes, and warm atmosphere that define your retreat.
+              </p>
+              <ImageCarousel images={carouselImages} />
+            </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Key Features */}
-      <section className="section-padding">
+      {/* Amenities Section */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small bg-[#f6f5e8]"
+      >
         <div className="container">
-          <motion.h2 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUpVariants}
-            className="heading-1 text-center mb-16"
-          >
-            Designed for Your Comfort
-          </motion.h2>
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.15 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12"
-          >
-            <motion.div variants={fadeInUpVariants} className="text-center">
-              <div className="mb-6">
-                <img
-                  src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/rmxjodi4_DSC_0728.jpg"
-                  alt="Luxury Bathroom"
-                  className="w-full h-[240px] object-cover mb-4"
-                />
-              </div>
-              <h3 className="heading-3 mb-4">Refined Elegance</h3>
-              <p className="body-regular text-[#666666]">
-                Every detail has been carefully considered, from the anatomic mattress to the walk-in shower, ensuring your absolute comfort.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeInUpVariants} className="text-center">
-              <div className="mb-6">
-                <img
-                  src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/e62wvh9t_DSC_0769.jpg"
-                  alt="Fully Equipped Kitchen"
-                  className="w-full h-[240px] object-cover mb-4"
-                />
-              </div>
-              <h3 className="heading-3 mb-4">Home Away From Home</h3>
-              <p className="body-regular text-[#666666]">
-                A fully-equipped kitchen with premium appliances, including a Nespresso machine, lets you feel truly at home during your stay.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeInUpVariants} className="text-center">
-              <div className="mb-6">
-                <img
-                  src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/py256jjy_DSC_0695.jpg"
-                  alt="Serene Bedroom"
-                  className="w-full h-[240px] object-cover mb-4"
-                />
-              </div>
-              <h3 className="heading-3 mb-4">Perfect Location</h3>
-              <p className="body-regular text-[#666666]">
-                Located in the heart of Thessaloniki, you're steps away from the city's best restaurants, shops, and cultural landmarks.
-              </p>
-            </motion.div>
-          </motion.div>
+          <h2 className="hero-medium mb-4 text-center" style={{ color: '#C86432' }}>
+            Everything You Need
+          </h2>
+          <p className="body-large text-[#666666] text-center mb-16 max-w-3xl mx-auto">
+            From fully-equipped kitchen to premium entertainment, every amenity has been carefully selected for your comfort and convenience.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {amenities.map((amenity, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-6" style={{ color: '#C86432' }}>
+                  {amenity.icon}
+                </div>
+                <h3 className="heading-3 mb-3">{amenity.title}</h3>
+                <p className="body-regular text-[#666666]">{amenity.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-16">
+            <Link to="/amenities" className="btn-secondary">
+              View All Amenities
+            </Link>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action */}
       <motion.section 
@@ -219,7 +187,7 @@ export const Home = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUpVariants}
-        className="section-padding-small bg-[#f6f5e8]"
+        className="section-padding"
       >
         <div className="container text-center">
           <h2 className="hero-medium mb-8">
@@ -232,8 +200,8 @@ export const Home = () => {
             <Link to="/contact" className="btn-primary">
               Book Your Stay
             </Link>
-            <Link to="/suite" className="btn-secondary">
-              Explore the Suite
+            <Link to="/area" className="btn-secondary">
+              Explore the Area
             </Link>
           </div>
         </div>
