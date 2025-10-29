@@ -10,22 +10,14 @@ export const Footer = () => {
   return (
     <footer className="bg-[#f6f5e8] border-t border-[#bcbbb4]">
       <div className="container py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div>
-            <h3 className="heading-3 mb-6">Elysium Retreat</h3>
-            <p className="body-regular text-[#666666] mb-4">
-              Your private sanctuary in the heart of Thessaloniki.
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact */}
           <div>
             <h4 className="heading-3 mb-6">Contact</h4>
             <div className="space-y-4">
-              <a href="mailto:info@elysiumretreat.com" className="flex items-center gap-3 text-[#666666] hover:text-[#333333] transition-smooth">
+              <a href="mailto:elysiumretreat@gmail.com" className="flex items-center gap-3 text-[#666666] hover:text-[#333333] transition-smooth">
                 <Mail size={16} />
-                <span className="body-regular">info@elysiumretreat.com</span>
+                <span className="body-regular">elysiumretreat@gmail.com</span>
               </a>
               <a href="tel:+306978076850" className="flex items-center gap-3 text-[#666666] hover:text-[#333333] transition-smooth">
                 <Phone size={16} />
@@ -51,7 +43,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/elysium.stay/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth"
+                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth rounded-lg"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -60,7 +52,7 @@ export const Footer = () => {
                 href="https://web.facebook.com/profile.php?id=61577150067312"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth"
+                className="p-3 border border-[#bcbbb4] hover:bg-[#C86432] hover:text-[#fffef2] hover:border-[#C86432] transition-smooth rounded-lg"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
