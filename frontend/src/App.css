@@ -29,6 +29,25 @@
     color: #fffef2;
 }
 
+/* Mobile optimization for header button */
+@media (max-width: 640px) {
+    .btn-primary {
+        padding: 14px 16px;
+        min-width: 140px;
+        height: 48px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 375px) {
+    .btn-primary {
+        padding: 12px 14px;
+        min-width: 120px;
+        height: 44px;
+        font-size: 12px;
+    }
+}
+
 /* Secondary Button - Olive green outline */
 .btn-secondary {
     background: transparent;
