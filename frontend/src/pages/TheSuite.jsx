@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Wifi, Tv, Coffee, Wind, Lock, Check } from 'lucide-react';
 
 export const TheSuite = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.hash === '#tour') {
+      const tourElement = document.getElementById('tour');
+      if (tourElement) {
+        setTimeout(() => {
+          tourElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
+  
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  };
   const features = [
     { icon: <Check size={20} />, text: '70 sq.m. of elegant space' },
     { icon: <Check size={20} />, text: 'King Size Bed with anatomic mattress' },
