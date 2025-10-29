@@ -19,11 +19,14 @@ export const Header = () => {
   return (
     <header className="navigation-header">
       <Link to="/" className="navigation-logo">
-        <img 
-          src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/u386b7x4_ChatGPT%20Image%206%20%CE%99%CE%BF%CF%85%CE%BD%202025%2C%2002_10_00%20%CE%BC.%CE%BC..png" 
-          alt="Elysium Retreat Logo" 
-        />
-        <span>Elysium Retreat</span>
+        <div className="flex flex-col">
+          <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: '600', color: '#C86432', lineHeight: '1.2' }}>
+            Elysium
+          </span>
+          <span style={{ fontFamily: 'Lato, sans-serif', fontSize: '14px', fontWeight: '400', color: '#707038', letterSpacing: '0.1em', lineHeight: '1.2' }}>
+            RETREAT
+          </span>
+        </div>
       </Link>
 
       {/* Desktop Navigation */}
