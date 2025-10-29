@@ -14,7 +14,7 @@ export const TheArea = () => {
       href={location.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-6 border border-[#ebeade] hover:border-[#C86432] hover:shadow-lg transition-all hover-lift"
+      className="block p-6 border border-[#ebeade] hover:border-[#C86432] hover:shadow-lg transition-all hover-lift rounded-xl"
     >
       <h3 className="heading-3 mb-4 text-[#333333]">{location.name}</h3>
       
