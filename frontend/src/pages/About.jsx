@@ -109,12 +109,6 @@ export const About = () => {
                     </p>
                   </div>
                 </div>
-
-                <div className="pt-8">
-                  <a href="/#contact" className="btn-primary">
-                    Book Your Stay
-                  </a>
-                </div>
               </div>
             </div>
           </motion.div>
