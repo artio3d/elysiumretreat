@@ -89,7 +89,7 @@ export const About = () => {
                 </div>
 
                 {/* Values */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#ebeade]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#ebeade] pb-20">
                   <div>
                     <h3 className="heading-3 mb-3" style={{ color: '#C86432' }}>Tranquility</h3>
                     <p className="body-regular text-[#666666]">
