@@ -55,117 +55,173 @@ export const TheArea = () => {
   return (
     <div>
       {/* Header */}
-      <section className="section-padding-small">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small"
+      >
         <div className="container">
           <h1 className="hero-large mb-6 text-center">
             Discover Thessaloniki
           </h1>
           <p className="body-large text-[#666666] text-center max-w-3xl mx-auto">
-            Elysium Retreat places you at the heart of one of Greece's most vibrant cities. From ancient landmarks to modern dining, everything is within easy reach.
+            Your interactive guide to the best of Thessaloniki. Find parking, explore historic attractions, and discover exceptional dining—all within walking distance of Elysium Retreat.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Map */}
-      <section className="section-padding-small bg-[#f6f5e8]">
+      {/* Interactive Map Section */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small bg-[#f6f5e8]"
+      >
         <div className="container">
-          <h2 className="heading-1 mb-8 text-center">Our Location</h2>
-          <div className="w-full" style={{ height: '500px' }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.8!2d22.9444!3d40.6401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDM4JzI0LjQiTiAyMsKwNTYnMzkuOCJF!5e0!3m2!1sen!2sgr!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Elysium Retreat Location"
+          <h2 className="heading-1 mb-8 text-center" style={{ color: '#C86432' }}>
+            Interactive Area Guide
+          </h2>
+          
+          {/* Filter Controls */}
+          <div className="mb-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-4">
+              <button
+                onClick={() => toggleFilter('parking')}
+                className={`px-6 py-3 border transition-smooth ${
+                  activeFilters.includes('parking')
+                    ? 'bg-[#707038] text-[#fffef2] border-[#707038]'
+                    : 'bg-transparent text-[#707038] border-[#707038] hover:bg-[#707038] hover:text-[#fffef2]'
+                }`}
+                style={{ borderRadius: '0px' }}
+              >
+                Parking
+              </button>
+              
+              <button
+                onClick={() => toggleFilter('attraction')}
+                className={`px-6 py-3 border transition-smooth ${
+                  activeFilters.includes('attraction')
+                    ? 'bg-[#C86432] text-[#fffef2] border-[#C86432]'
+                    : 'bg-transparent text-[#C86432] border-[#C86432] hover:bg-[#C86432] hover:text-[#fffef2]'
+                }`}
+                style={{ borderRadius: '0px' }}
+              >
+                Attractions
+              </button>
+              
+              <button
+                onClick={() => toggleFilter('food')}
+                className={`px-6 py-3 border transition-smooth ${
+                  isFoodFilterActive
+                    ? 'bg-[#333333] text-[#fffef2] border-[#333333]'
+                    : 'bg-transparent text-[#333333] border-[#333333] hover:bg-[#333333] hover:text-[#fffef2]'
+                }`}
+                style={{ borderRadius: '0px' }}
+              >
+                Food & Drink
+              </button>
+            </div>
+
+            {/* Food Subfilters */}
+            {isFoodFilterActive && (
+              <div className="flex flex-wrap justify-center gap-3">
+                <button
+                  onClick={() => toggleFoodSubfilter('brunch')}
+                  className={`px-4 py-2 text-sm border transition-smooth ${
+                    activeFilters.includes('brunch')
+                      ? 'bg-[#9B59B6] text-[#fffef2] border-[#9B59B6]'
+                      : 'bg-transparent text-[#9B59B6] border-[#9B59B6] hover:bg-[#9B59B6] hover:text-[#fffef2]'
+                  }`}
+                  style={{ borderRadius: '0px' }}
+                >
+                  Brunch
+                </button>
+                
+                <button
+                  onClick={() => toggleFoodSubfilter('lunch')}
+                  className={`px-4 py-2 text-sm border transition-smooth ${
+                    activeFilters.includes('lunch')
+                      ? 'bg-[#3498DB] text-[#fffef2] border-[#3498DB]'
+                      : 'bg-transparent text-[#3498DB] border-[#3498DB] hover:bg-[#3498DB] hover:text-[#fffef2]'
+                  }`}
+                  style={{ borderRadius: '0px' }}
+                >
+                  Lunch
+                </button>
+                
+                <button
+                  onClick={() => toggleFoodSubfilter('nightout')}
+                  className={`px-4 py-2 text-sm border transition-smooth ${
+                    activeFilters.includes('nightout')
+                      ? 'bg-[#E74C3C] text-[#fffef2] border-[#E74C3C]'
+                      : 'bg-transparent text-[#E74C3C] border-[#E74C3C] hover:bg-[#E74C3C] hover:text-[#fffef2]'
+                  }`}
+                  style={{ borderRadius: '0px' }}
+                >
+                  Night Out
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Map */}
+          <div className="border-2 border-[#bcbbb4] overflow-hidden">
+            <InteractiveMap
+              center={elysiumLocation}
+              locations={allLocations}
+              filters={activeFilters.length > 0 ? activeFilters : ['parking', 'attraction', 'brunch', 'lunch', 'nightout']}
             />
           </div>
-          <div className="text-center mt-8">
-            <a
-              href="https://maps.app.goo.gl/9kMGhxrQjmSf4Q4h7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-icon"
-            >
-              <MapPin size={12} />
-              Open in Google Maps
-            </a>
-          </div>
-        </div>
-      </section>
 
-      {/* Points of Interest */}
-      <section className="section-padding">
-        <div className="container">
-          <h2 className="heading-1 mb-16 text-center">Nearby Attractions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Sightseeing */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <Landmark size={24} className="text-[#333333]" />
-                <h3 className="heading-3">Sightseeing</h3>
-              </div>
-              <div className="space-y-4">
-                {sightseeing.map((place, index) => (
-                  <div key={index} className="border-b border-[#ebeade] pb-4">
-                    <p className="body-regular font-medium mb-1">{place.name}</p>
-                    <p className="body-small text-[#666666]">{place.distance} • {place.time}</p>
-                  </div>
-                ))}
-              </div>
+          {/* Legend */}
+          <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#707038]"></div>
+              <span>Parking</span>
             </div>
-
-            {/* Dining */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <Utensils size={24} className="text-[#333333]" />
-                <h3 className="heading-3">Food & Drink</h3>
-              </div>
-              <div className="space-y-4">
-                {dining.map((place, index) => (
-                  <div key={index} className="border-b border-[#ebeade] pb-4">
-                    <p className="body-regular font-medium mb-1">{place.name}</p>
-                    <p className="body-small text-[#666666]">{place.distance} • {place.time}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#C86432]"></div>
+              <span>Attractions</span>
             </div>
-
-            {/* Shopping */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <ShoppingBag size={24} className="text-[#333333]" />
-                <h3 className="heading-3">Shopping</h3>
-              </div>
-              <div className="space-y-4">
-                {shopping.map((place, index) => (
-                  <div key={index} className="border-b border-[#ebeade] pb-4">
-                    <p className="body-regular font-medium mb-1">{place.name}</p>
-                    <p className="body-small text-[#666666]">{place.distance} • {place.time}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#9B59B6]"></div>
+              <span>Brunch</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#3498DB]"></div>
+              <span>Lunch</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#E74C3C]"></div>
+              <span>Night Out</span>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CTA */}
-      <section className="section-padding-small bg-[#f6f5e8]">
+      {/* Additional Info */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding"
+      >
         <div className="container text-center">
           <h2 className="hero-medium mb-8">
-            Your Thessaloniki Adventure Awaits
+            Everything Within Reach
           </h2>
           <p className="body-large text-[#666666] mb-12 max-w-2xl mx-auto">
-            Book your stay and discover why Thessaloniki is one of Greece's most captivating cities.
+            Elysium Retreat's prime location puts you at the center of Thessaloniki's cultural and culinary scene. Most attractions, restaurants, and amenities are within a comfortable 5-15 minute walk.
           </p>
           <a href="/contact" className="btn-primary">
             Book Your Stay
           </a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
