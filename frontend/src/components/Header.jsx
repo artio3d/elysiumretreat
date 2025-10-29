@@ -93,13 +93,6 @@ export const Header = () => {
             >
               Contact
             </a>
-            <a
-              href="/#contact"
-              onClick={(e) => handleAnchorClick(e, 'contact')}
-              className="btn-primary mt-8"
-            >
-              Book Your Stay
-            </a>
           </nav>
         </div>
       )}
