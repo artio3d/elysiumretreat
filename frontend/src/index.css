@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font Loading - Professional Font Pairing */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+/* Premium Font Loading */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 body {
     margin: 0;
-    font-family: 'Lato', -apple-system, BlinkMacSystemKey, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 code {
@@ -23,19 +24,19 @@ code {
     --bg-secondary: #f6f5e8;
     --bg-subtle: #ebeade;
     
-    /* Brand Colors - From Logo Inspiration */
+    /* Brand Colors */
     --brand-terracotta: #C86432;
     --brand-olive: #707038;
     --brand-terracotta-hover: #B05528;
     --brand-olive-hover: #5A5A2E;
     
-    /* Text Hierarchy - Rich contrast */
+    /* Text Hierarchy */
     --text-primary: #333333;
     --text-secondary: #666666;
     --text-light: #bcbbb4;
     --text-meta: #4a4a4a;
     
-    /* Interactive States - Minimal emphasis */
+    /* Interactive States */
     --interactive-base: #C86432;
     --interactive-hover: #B05528;
     --focus-outline: #C86432;
@@ -44,10 +45,6 @@ code {
     --border-light: #bcbbb4;
     --border-medium: #cccccc;
     --border-subtle: rgba(51,51,51,0.2);
-    
-    /* Status Colors - Muted */
-    --status-error: #ba3e2b;
-    --status-success: #4a4a4a;
     
     /* Shadcn compatibility */
     --background: 0 0% 100%;
@@ -82,49 +79,68 @@ code {
   }
 }
 
-/* Typography System - Professional Font Pairing */
-.hero-large {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
+/* Logo Font - Artistic & Elegant */
+.logo-elysium {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
     font-weight: 600;
-    line-height: 1.33;
+    color: #C86432;
+    line-height: 1.2;
+}
+
+.logo-retreat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #707038;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+}
+
+/* Typography System - Modern & Clean */
+.hero-large {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
 .hero-medium {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
     font-weight: 600;
-    line-height: 1.33;
+    line-height: 1.35;
     color: var(--text-primary);
 }
 
 .heading-1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
 .heading-2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
 .heading-3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
 .body-large {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
@@ -132,7 +148,7 @@ code {
 }
 
 .body-regular {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6;
@@ -140,7 +156,7 @@ code {
 }
 
 .body-small {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.4;
@@ -148,18 +164,23 @@ code {
 }
 
 .button-text {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.4;
 }
 
 .navigation-text {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.4;
     color: var(--text-primary);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Transition Standards */
