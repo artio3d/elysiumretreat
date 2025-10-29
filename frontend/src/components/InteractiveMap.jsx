@@ -62,7 +62,7 @@ export const InteractiveMap = ({ center, locations, filters }) => {
   }
 
   if (!isLoaded) {
-    return <div className=\"text-center p-8\">Loading map...</div>;
+    return <div className="text-center p-8">Loading map...</div>;
   }
 
   return (
@@ -81,7 +81,7 @@ export const InteractiveMap = ({ center, locations, filters }) => {
           url: 'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/u386b7x4_ChatGPT%20Image%206%20%CE%99%CE%BF%CF%85%CE%BD%202025%2C%2002_10_00%20%CE%BC.%CE%BC..png',
           scaledSize: new window.google.maps.Size(40, 40)
         }}
-        title=\"Elysium Retreat\"
+        title="Elysium Retreat"
       />
 
       {/* Location Markers */}
