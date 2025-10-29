@@ -243,9 +243,9 @@ export const Contact = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 border border-[#bcbbb4] mb-6">
                 <Phone size={24} className="text-[#333333]" />
               </div>
-              <h3 className="heading-3 mb-4">Phone</h3>
-              <a href="tel:+302310000000" className="body-regular text-[#666666] hover:text-[#333333] transition-smooth">
-                +30 231 000 0000
+              <h3 className="heading-3 mb-4">Phone / WhatsApp</h3>
+              <a href="tel:+306978076850" className="body-regular text-[#666666] hover:text-[#333333] transition-smooth">
+                +30 697 807 6850
               </a>
             </div>
             <div className="text-center">
