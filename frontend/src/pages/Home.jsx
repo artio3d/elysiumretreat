@@ -207,8 +207,8 @@ export const Home = () => {
                   </div>
                   <div>
                     <p className="body-small text-[#666666] mb-2">Email</p>
-                    <a href="mailto:contact@elysiumstay.com" className="body-large font-semibold text-[#333333] hover:text-[#C86432] transition-smooth">
-                      contact@elysiumstay.com
+                    <a href="mailto:elysiumretreat@gmail.com" className="body-large font-semibold text-[#333333] hover:text-[#C86432] transition-smooth">
+                      elysiumretreat@gmail.com
                     </a>
                   </div>
                 </div>
