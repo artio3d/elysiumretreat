@@ -1,29 +1,56 @@
-import React from 'react';
-import { MapPin, Utensils, ShoppingBag, Landmark } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { InteractiveMap } from '../components/InteractiveMap';
+import { parkingLocations, attractions, foodDrink, elysiumLocation } from '../data/mapData';
 
 export const TheArea = () => {
-  const sightseeing = [
-    { name: 'White Tower', distance: '1.2 km', time: '15 min walk' },
-    { name: 'Aristotelous Square', distance: '0.8 km', time: '10 min walk' },
-    { name: 'Rotunda of Galerius', distance: '1.5 km', time: '18 min walk' },
-    { name: 'Archaeological Museum', distance: '2.0 km', time: '25 min walk' },
-    { name: 'Byzantine Walls', distance: '2.5 km', time: '30 min walk' }
+  const [activeFilters, setActiveFilters] = useState([]);
+  const [foodSubfilter, setFoodSubfilter] = useState(null);
+
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  };
+
+  // Combine all locations
+  const allLocations = [
+    ...parkingLocations,
+    ...attractions,
+    ...(foodSubfilter 
+      ? foodDrink.filter(item => item.category === foodSubfilter)
+      : foodDrink)
   ];
 
-  const dining = [
-    { name: 'Traditional Taverna Ouzeri', distance: '0.3 km', time: '4 min walk' },
-    { name: 'Modern Greek Cuisine', distance: '0.5 km', time: '6 min walk' },
-    { name: 'Waterfront Cafes', distance: '1.0 km', time: '12 min walk' },
-    { name: 'Local Markets', distance: '0.7 km', time: '8 min walk' },
-    { name: 'Rooftop Bars', distance: '0.6 km', time: '7 min walk' }
-  ];
+  const toggleFilter = (filter) => {
+    if (filter === 'food') {
+      if (activeFilters.includes('brunch') || activeFilters.includes('lunch') || activeFilters.includes('nightout')) {
+        // Remove all food filters
+        setActiveFilters(activeFilters.filter(f => !['brunch', 'lunch', 'nightout'].includes(f)));
+        setFoodSubfilter(null);
+      } else {
+        // Add all food filters
+        setActiveFilters([...activeFilters.filter(f => !['brunch', 'lunch', 'nightout'].includes(f)), 'brunch', 'lunch', 'nightout']);
+      }
+    } else {
+      setActiveFilters(
+        activeFilters.includes(filter)
+          ? activeFilters.filter(f => f !== filter)
+          : [...activeFilters, filter]
+      );
+    }
+  };
 
-  const shopping = [
-    { name: 'Tsimiski Street Shopping', distance: '0.9 km', time: '11 min walk' },
-    { name: 'Local Artisan Shops', distance: '0.4 km', time: '5 min walk' },
-    { name: 'Modiano Market', distance: '1.1 km', time: '14 min walk' },
-    { name: 'Contemporary Boutiques', distance: '0.8 km', time: '10 min walk' }
-  ];
+  const toggleFoodSubfilter = (subfilter) => {
+    if (activeFilters.includes(subfilter)) {
+      setActiveFilters(activeFilters.filter(f => f !== subfilter));
+      if (foodSubfilter === subfilter) setFoodSubfilter(null);
+    } else {
+      setActiveFilters([...activeFilters.filter(f => !['brunch', 'lunch', 'nightout'].includes(f)), subfilter]);
+      setFoodSubfilter(subfilter);
+    }
+  };
+
+  const isFoodFilterActive = activeFilters.includes('brunch') || activeFilters.includes('lunch') || activeFilters.includes('nightout');
 
   return (
     <div>
