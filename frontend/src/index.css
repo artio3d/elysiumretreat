@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font Loading - Suisse International with fallback */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+/* Font Loading - Professional Font Pairing */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemKey, "Segoe UI", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -23,7 +23,7 @@ code {
     --bg-secondary: #f6f5e8;
     --bg-subtle: #ebeade;
     
-    /* Brand Colors - From Logo */
+    /* Brand Colors - From Logo Inspiration */
     --brand-terracotta: #C86432;
     --brand-olive: #707038;
     --brand-terracotta-hover: #B05528;
@@ -82,43 +82,49 @@ code {
   }
 }
 
-/* Typography System */
+/* Typography System - Professional Font Pairing */
 .hero-large {
+    font-family: 'Playfair Display', serif;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.33;
     color: var(--text-primary);
 }
 
 .hero-medium {
+    font-family: 'Playfair Display', serif;
     font-size: 26px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.33;
     color: var(--text-primary);
 }
 
 .heading-1 {
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
 }
 
 .heading-2 {
+    font-family: 'Playfair Display', serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
 }
 
 .heading-3 {
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
 }
 
 .body-large {
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
@@ -126,6 +132,7 @@ code {
 }
 
 .body-regular {
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6;
@@ -133,6 +140,7 @@ code {
 }
 
 .body-small {
+    font-family: 'Lato', sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.4;
@@ -140,12 +148,14 @@ code {
 }
 
 .button-text {
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.4;
 }
 
 .navigation-text {
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
