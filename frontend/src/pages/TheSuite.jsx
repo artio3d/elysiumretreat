@@ -62,7 +62,13 @@ export const TheSuite = () => {
   return (
     <div>
       {/* Header */}
-      <section className="section-padding-small">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small"
+      >
         <div className="container">
           <h1 className="hero-large mb-6 text-center">
             An Urban Retreat Designed for You
@@ -71,10 +77,17 @@ export const TheSuite = () => {
             Step into a sanctuary where every element has been thoughtfully curated to offer you the perfect blend of comfort, style, and functionality. This is more than a place to stay—it's a space to truly live.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3D Virtual Tour */}
-      <section className="section-padding-small bg-[#f6f5e8]">
+      <motion.section 
+        id="tour"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding-small bg-[#f6f5e8]"
+      >
         <div className="container">
           <h2 className="heading-1 mb-8 text-center">Take a Virtual Walkthrough</h2>
           <p className="body-large text-[#666666] text-center mb-12 max-w-2xl mx-auto">
