@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wifi, Tv, Coffee, Wind, Home as HomeIcon, Lock } from 'lucide-react';
+import { Wifi, Tv, Coffee, Wind, HomeIcon, Lock, Check, Utensils, Wine, MapPin as MapPinIcon, Sparkles } from 'lucide-react';
 import { ImageCarousel } from '../components/ImageCarousel';
 
 export const Home = () => {
@@ -33,63 +33,70 @@ export const Home = () => {
     }
   ];
 
+  const galleryImages = [
+    'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/k1sgno7v_DSC_0648.jpg',
+    'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/py256jjy_DSC_0695.jpg',
+    'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/olpbcj2y_DSC_0754.jpg',
+    'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/e62wvh9t_DSC_0769.jpg',
+    'https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/rmxjodi4_DSC_0728.jpg'
+  ];
+
   const amenities = [
-    {
-      icon: <HomeIcon size={32} />,
-      title: '70 sq.m. Space',
-      description: 'Spacious apartment designed for comfort'
-    },
-    {
-      icon: <Wifi size={32} />,
-      title: 'High-Speed Wi-Fi',
-      description: 'Free unlimited internet access'
-    },
-    {
-      icon: <Tv size={32} />,
-      title: 'Smart TV',
-      description: '50" with Netflix and streaming services'
-    },
-    {
-      icon: <Coffee size={32} />,
-      title: 'Nespresso Machine',
-      description: 'Premium coffee with capsules included'
-    },
-    {
-      icon: <Wind size={32} />,
-      title: 'Climate Control',
-      description: 'Air conditioning and heating throughout'
-    },
-    {
-      icon: <Lock size={32} />,
-      title: 'Self Check-in',
-      description: 'Contactless keyless entry system'
-    }
+    { icon: <HomeIcon size={32} />, title: '70 sq.m. Space', description: 'Spacious apartment designed for ultimate comfort' },
+    { icon: <Check size={32} />, title: 'King Size Bed', description: 'Premium anatomic mattress for restful sleep' },
+    { icon: <Wifi size={32} />, title: 'High-Speed Wi-Fi', description: 'Free unlimited internet throughout' },
+    { icon: <Tv size={32} />, title: 'Smart Entertainment', description: '50" TV with Netflix & streaming' },
+    { icon: <Coffee size={32} />, title: 'Nespresso Machine', description: 'Premium coffee with capsules included' },
+    { icon: <Utensils size={32} />, title: 'Full Kitchen', description: 'Modern appliances & cookware' },
+    { icon: <Wind size={32} />, title: 'Climate Control', description: 'Air conditioning & heating' },
+    { icon: <Lock size={32} />, title: 'Self Check-in', description: 'Contactless keyless entry' },
+    { icon: <Check size={32} />, title: 'Premium Linens', description: 'Hypo-allergenic bedding & towels' },
+    { icon: <Check size={32} />, title: 'Washer & Dryer', description: 'Laundry facilities included' },
+    { icon: <Check size={32} />, title: 'Soundproofing', description: 'Peaceful environment guaranteed' },
+    { icon: <Check size={32} />, title: 'Private Terrace', description: 'Balcony with city views' }
   ];
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative">
+      {/* SECTION 1: Hero */}
+      <section id="home" className="relative">
         <img
           src="https://customer-assets.emergentagent.com/job_urban-oasis-2/artifacts/3qsq388b__NVD6519.JPG"
           alt="Elysium Retreat Living Room"
           className="hero-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#fffef2]/95 via-[#fffef2]/40 to-transparent flex items-end">
-          <div className="container pb-20">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#fffef2]/95 via-[#fffef2]/30 to-transparent flex items-end">
+          <div className="container pb-24">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-large max-w-2xl mb-4 text-[#333333]"
+              className="hero-large max-w-3xl mb-6 text-[#333333]"
             >
               Your Private Sanctuary in the Heart of Thessaloniki
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="body-large text-[#666666] max-w-2xl mb-8"
+            >
+              Experience authentic Greek hospitality in a meticulously designed space that invites you to breathe, relax, and feel at home.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <a href="#contact" className="btn-primary">
+                Book Your Stay
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Immerse Yourself Section - NEW */}
+      {/* SECTION 2: The Suite - 3D Tour */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -98,47 +105,29 @@ export const Home = () => {
         className="section-padding"
       >
         <div className="container">
-          <h2 className="hero-large mb-4 text-center" style={{ color: '#C86432' }}>
+          <h2 className="hero-medium mb-6 text-center" style={{ color: '#C86432' }}>
             Step Inside Your Sanctuary
           </h2>
           <p className="body-large text-[#666666] text-center mb-20 max-w-3xl mx-auto">
-            Experience your future sanctuary through our immersive 3D tour and curated photography. Explore every detail before you arrive.
+            Take an immersive 3D tour and explore every corner of Elysium Retreat from anywhere in the world.
           </p>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column - Matterport 3D Tour */}
-            <div>
-              <h3 className="heading-2 mb-6" style={{ color: '#707038' }}>Virtual 3D Tour</h3>
-              <p className="body-regular text-[#666666] mb-6">
-                Navigate through the space at your own pace. Click, drag, and explore every corner of Elysium Retreat from anywhere in the world.
-              </p>
-              <div className="w-full" style={{ height: '600px' }}>
-                <iframe
-                  src="https://my.matterport.com/show/?m=gnCs6bcha8J"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="xr-spatial-tracking"
-                  title="Elysium Retreat 3D Tour"
-                  className="border-0"
-                />
-              </div>
-            </div>
-
-            {/* Right Column - Image Carousel */}
-            <div>
-              <h3 className="heading-2 mb-6" style={{ color: '#707038' }}>Photo Gallery</h3>
-              <p className="body-regular text-[#666666] mb-6">
-                Discover the thoughtful design details, premium finishes, and warm atmosphere that define your retreat.
-              </p>
-              <ImageCarousel images={carouselImages} />
-            </div>
+          <div className="w-full max-w-6xl mx-auto" style={{ height: '700px' }}>
+            <iframe
+              src="https://my.matterport.com/show/?m=gnCs6bcha8J"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              allow="xr-spatial-tracking"
+              title="Elysium Retreat 3D Tour"
+              className="border-0"
+            />
           </div>
         </div>
       </motion.section>
 
-      {/* Amenities Section */}
+      {/* SECTION 2B: Photo Gallery - Masonry Grid */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -147,62 +136,117 @@ export const Home = () => {
         className="section-padding-small bg-[#f6f5e8]"
       >
         <div className="container">
-          <h2 className="hero-medium mb-4 text-center" style={{ color: '#C86432' }}>
+          <h2 className="heading-1 mb-16 text-center">
+            Discover Every Detail
+          </h2>
+          
+          {/* Masonry Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="image-card hover-lift"
+                style={{ height: index % 3 === 0 ? '400px' : '300px' }}
+              >
+                <img 
+                  src={image} 
+                  alt={`Elysium Retreat ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* SECTION 3: Amenities Grid */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUpVariants}
+        className="section-padding"
+      >
+        <div className="container">
+          <h2 className="hero-medium mb-6 text-center" style={{ color: '#C86432' }}>
             Everything You Need
           </h2>
-          <p className="body-large text-[#666666] text-center mb-16 max-w-3xl mx-auto">
-            From fully-equipped kitchen to premium entertainment, every amenity has been carefully selected for your comfort and convenience.
+          <p className="body-large text-[#666666] text-center mb-20 max-w-3xl mx-auto">
+            From fully-equipped kitchen to premium entertainment, every amenity has been carefully selected for your comfort.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {amenities.map((amenity, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="text-center"
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                className="flex flex-col items-center text-center p-6 border border-[#ebeade] hover:border-[#C86432] transition-smooth hover-lift"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-6" style={{ color: '#C86432' }}>
+                <div className="mb-4" style={{ color: '#C86432' }}>
                   {amenity.icon}
                 </div>
-                <h3 className="heading-3 mb-3">{amenity.title}</h3>
-                <p className="body-regular text-[#666666]">{amenity.description}</p>
+                <h3 className="heading-3 mb-2">{amenity.title}</h3>
+                <p className="body-small text-[#666666]">{amenity.description}</p>
               </motion.div>
             ))}
-          </div>
-          
-          <div className="text-center mt-16">
-            <Link to="/amenities" className="btn-secondary">
-              View All Amenities
-            </Link>
           </div>
         </div>
       </motion.section>
 
-      {/* Call to Action */}
+      {/* SECTION 4: Contact Form */}
       <motion.section 
+        id="contact"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={fadeInUpVariants}
-        className="section-padding"
+        className="section-padding bg-[#f6f5e8]"
       >
-        <div className="container text-center">
-          <h2 className="hero-medium mb-8">
+        <div className="container">
+          <h2 className="hero-medium mb-6 text-center">
             Ready to Experience Tranquility?
           </h2>
-          <p className="body-large text-[#666666] mb-12 max-w-2xl mx-auto">
+          <p className="body-large text-[#666666] text-center mb-16 max-w-2xl mx-auto">
             Reserve your stay at Elysium Retreat and discover your private sanctuary in Thessaloniki.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="btn-primary">
-              Book Your Stay
-            </Link>
-            <Link to="/area" className="btn-secondary">
-              Explore the Area
-            </Link>
+          
+          <div className="max-w-4xl mx-auto">
+            {/* Booking Options */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {/* Direct Booking */}
+              <div className="border-2 border-[#C86432] p-8">
+                <h3 className="heading-2 mb-4">Direct Booking</h3>
+                <p className="body-regular text-[#666666] mb-6">
+                  Book directly with us for the best rates and personalized service.
+                </p>
+                <div className="inline-block px-4 py-2 bg-[#C86432] text-[#fffef2]">
+                  <span className="body-small font-bold">RECOMMENDED</span>
+                </div>
+              </div>
+
+              {/* Booking.com */}
+              <div className="border border-[#bcbbb4] p-8">
+                <h3 className="heading-2 mb-4">Book via Booking.com</h3>
+                <p className="body-regular text-[#666666] mb-6">
+                  Reserve through a trusted platform with instant confirmation.
+                </p>
+                <a
+                  href="https://www.booking.com/Share-yssY88"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Book on Booking.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
