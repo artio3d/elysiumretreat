@@ -73,25 +73,16 @@ export const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero-large max-w-3xl mb-6 text-[#333333]"
             >
-              Your Private Sanctuary in the Heart of Thessaloniki
+              Stay in the Heart. Live the City.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="body-large text-[#666666] max-w-2xl mb-8"
+              className="body-large text-[#666666] max-w-2xl"
             >
               Experience authentic Greek hospitality in a meticulously designed space that invites you to breathe, relax, and feel at home.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <a href="#contact" className="btn-primary">
-                Book Your Stay
-              </a>
-            </motion.div>
           </div>
         </div>
       </section>
