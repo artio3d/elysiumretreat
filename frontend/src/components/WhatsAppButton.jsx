@@ -11,7 +11,7 @@ export const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-[#333333] text-[#fffef2] flex items-center justify-center shadow-lg hover:bg-[#000000] transition-smooth"
+      className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-[#C86432] text-[#fffef2] flex items-center justify-center shadow-lg hover:bg-[#B05528] transition-smooth"
       style={{ borderRadius: '0px' }}
       aria-label="Contact us on WhatsApp"
     >
