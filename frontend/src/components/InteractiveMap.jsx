@@ -101,46 +101,46 @@ export const InteractiveMap = ({ center, locations, filters }) => {
           onCloseClick={() => setSelectedLocation(null)}
         >
           <div style={{ padding: '12px', maxWidth: '280px' }}>
-            <h3 className=\"heading-3 mb-3\" style={{ color: '#333333' }}>
+            <h3 className="heading-3 mb-3" style={{ color: '#333333' }}>
               {selectedLocation.name}
             </h3>
             
-            <div className=\"space-y-2\">
-              <div className=\"flex items-center gap-2 text-sm\">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm">
                 <MapPin size={16} style={{ color: '#C86432' }} />
                 <span>{selectedLocation.distance}</span>
               </div>
 
               {selectedLocation.hours && (
-                <div className=\"flex items-center gap-2 text-sm\">
+                <div className="flex items-center gap-2 text-sm">
                   <Clock size={16} style={{ color: '#C86432' }} />
                   <span>{selectedLocation.hours}</span>
                 </div>
               )}
 
               {selectedLocation.price && (
-                <div className=\"flex items-center gap-2 text-sm\">
+                <div className="flex items-center gap-2 text-sm">
                   <Euro size={16} style={{ color: '#C86432' }} />
                   <span>{selectedLocation.price}</span>
                 </div>
               )}
 
               {selectedLocation.rating && (
-                <div className=\"flex items-center gap-2 text-sm\">
-                  <Star size={16} fill=\"#C86432\" style={{ color: '#C86432' }} />
+                <div className="flex items-center gap-2 text-sm">
+                  <Star size={16} fill="#C86432" style={{ color: '#C86432' }} />
                   <span>{selectedLocation.rating}/5</span>
                 </div>
               )}
 
               {selectedLocation.description && (
-                <p className=\"text-sm text-gray-600 mt-2\">
+                <p className="text-sm text-gray-600 mt-2">
                   {selectedLocation.description}
                 </p>
               )}
 
               {selectedLocation.subcategory && (
                 <span 
-                  className=\"inline-block px-2 py-1 text-xs mt-2\" 
+                  className="inline-block px-2 py-1 text-xs mt-2" 
                   style={{ 
                     background: '#f6f5e8',
                     color: '#707038',
@@ -154,9 +154,9 @@ export const InteractiveMap = ({ center, locations, filters }) => {
 
             <a
               href={selectedLocation.link}
-              target=\"_blank\"
-              rel=\"noopener noreferrer\"
-              className=\"inline-flex items-center gap-2 mt-4 text-sm\"
+              target="blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-sm"
               style={{ color: '#C86432' }}
             >
               View on Google Maps
