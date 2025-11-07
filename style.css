@@ -33,7 +33,7 @@ nav ul li a:hover { color: var(--accent-color); }
 
 /* --- Hero Section --- ΕΝΗΜΕΡΩΜΕΝΟ --- */
 #hero {
-    background: url('_NVD6519ok.JPG') no-repeat center center/cover;
+    background: url('_NVD6519ok.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: flex-start; /* Στοίχιση αριστερά */
@@ -105,3 +105,4 @@ nav ul li a:hover { color: var(--accent-color); }
 
 /* --- Footer --- */
 footer { background: #333; color: white; text-align: center; padding: 20px 0; border: none; }
+
