@@ -1,0 +1,107 @@
+/* --- Urban Minimal Theme & Earthy Colors --- */
+:root {
+    --primary-bg: #F8F5F2; 
+    --secondary-bg: #FFFFFF; 
+    --text-color: #4E423D; 
+    --accent-color: #D87C49; 
+    --hover-color: #C16634; 
+    --border-color: #EAE2DB; 
+    --tag-bg: #F4A261; 
+    --tag-text: #FFFFFF;
+}
+
+/* --- Basic Setup --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--primary-bg); }
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+section { padding: 80px 0; border-bottom: 1px solid var(--border-color); }
+section:last-of-type { border-bottom: none; }
+h1, h2, h3, h4 { text-align: center; margin-bottom: 20px; font-weight: 500; }
+h2 { font-size: 2.2rem; font-weight: 700; }
+
+/* --- Header & Navigation --- */
+#header { background: rgba(248, 245, 242, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: background 0.3s ease, box-shadow 0.3s ease; }
+#header .container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.logo a { text-decoration: none; color: var(--text-color); font-size: 1.5rem; font-weight: 700; }
+.logo span { font-weight: 400; color: #8A817C; }
+nav ul { list-style: none; display: flex; }
+nav ul li { margin-left: 30px; }
+nav ul li a { text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
+nav ul li a:hover { color: var(--accent-color); }
+.btn-book-nav { background: var(--accent-color); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
+.btn-book-nav:hover { background: var(--hover-color); transform: translateY(-2px); }
+
+/* --- Hero Section --- ΕΝΗΜΕΡΩΜΕΝΟ --- */
+#hero {
+    background: url('_NVD6519ok.JPG') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Στοίχιση αριστερά */
+    align-items: center;
+    text-align: left; /* Στοίχιση κειμένου αριστερά */
+    padding-top: 80px;
+}
+
+.hero-text {
+    /* Αφαιρέθηκε το background-color */
+    padding-left: 5%; /* Προσθέτει απόσταση από την άκρη */
+    max-width: 600px; /* Περιορίζει το πλάτος του κειμένου */
+}
+
+.hero-text h1 {
+    font-size: 4.5rem; /* Μεγαλύτερη γραμματοσειρά */
+    color: var(--text-color); /* Σκούρο χρώμα */
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά για ευκρίνεια */
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--primary-bg); /* Σκούρο χρώμα */
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά */
+}
+/* --- ΤΕΛΟΣ ΕΝΗΜΕΡΩΣΗΣ HERO --- */
+
+/* --- Tour & Gallery --- */
+.matterport-embed, .slideshow-container { border-radius: 10px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.slideshow-container { max-width: 1000px; position: relative; margin-left: auto; margin-right: auto; }
+.mySlides { display: none; }
+.fade { animation: fade 1.5s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+.prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background-color: rgba(0,0,0,0.4); }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* --- Amenities & About --- */
+#amenities, #about { background: var(--secondary-bg); }
+.amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+.amenity-card { padding: 25px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; }
+.amenity-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.about-text { text-align: left; }
+
+/* --- Parking Section --- */
+.area-intro { text-align: center; max-width: 800px; margin: 0 auto 40px auto; }
+.map-container { position: relative; overflow: hidden; width: 100%; padding-top: 56.25%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.area-card { background: var(--secondary-bg); border: 1px solid var(--border-color); padding: 25px; border-radius: 10px; transition: box-shadow 0.3s, transform 0.3s; }
+.area-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.07); }
+.area-card h4 { font-size: 1.25rem; text-align: left; margin-bottom: 15px; }
+.area-card p { display: flex; align-items: center; gap: 8px; text-align: left; margin-bottom: 5px; color: #6c757d; }
+.area-card ion-icon { font-size: 1.1rem; color: var(--accent-color); }
+.area-card a { display: inline-flex; align-items: center; gap: 5px; margin-top: 15px; color: var(--accent-color); text-decoration: none; font-weight: 500; }
+.area-card a ion-icon { font-size: 1rem; }
+
+/* --- Contact / Booking Section --- */
+#contact { background: var(--secondary-bg); }
+.booking-options { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+.booking-card { background: #fff; border: 1px solid var(--border-color); padding: 30px; border-radius: 10px; text-align: center; }
+.booking-card.direct-contact { border: 2px solid var(--accent-color); }
+.booking-card h3 { margin-bottom: 15px; }
+.btn-book-main { background: var(--accent-color); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; display: inline-block; margin-top: 20px; border: none; cursor: pointer; }
+.btn-book-main:hover { background: var(--hover-color); transform: translateY(-2px); }
+
+/* --- Footer --- */
+footer { background: #333; color: white; text-align: center; padding: 20px 0; border: none; }
