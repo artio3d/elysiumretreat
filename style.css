@@ -19,17 +19,86 @@ section:last-of-type { border-bottom: none; }
 h1, h2, h3, h4 { text-align: center; margin-bottom: 20px; font-weight: 500; }
 h2 { font-size: 2.2rem; font-weight: 700; }
 
-/* --- Header & Navigation --- */
-#header { background: rgba(248, 245, 242, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: background 0.3s ease, box-shadow 0.3s ease; }
-#header .container { display: flex; justify-content: center; align-items: center; height: 80px; gap: 80px;  }
-.logo a { text-decoration: none; color: var(--text-color); font-size: 1.5rem; font-weight: 700; }
-.logo span { font-weight: 400; color: #8A817C; }
-nav ul { list-style: none; display: flex; }
-nav ul li { margin-left: 30px; }
-nav ul li a { text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
-nav ul li a:hover { color: var(--accent-color); }
-.btn-book-nav { background: var(--accent-color); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
-.btn-book-nav:hover { background: var(--hover-color); transform: translateY(-2px); }
+/* --- Header & Navigation (Desktop Layout) --- */
+#header { 
+    background: rgba(248, 245, 242, 0.85); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--border-color); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    transition: background 0.3s ease, box-shadow 0.3s ease; 
+}
+
+#header .container { 
+    display: flex; 
+    justify-content: space-between; /* Σπρώχνει το Logo στην αρχή και το Nav στο τέλος */
+    align-items: center; 
+    height: 80px; 
+}
+
+.logo a { 
+    text-decoration: none; 
+    color: var(--text-color); 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+}
+
+.logo span { 
+    font-weight: 400; 
+    color: #8A817C; 
+}
+
+/* Το Wrapper που περιέχει τα Links και το Κουμπί */
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Πιάνει όλο τον χώρο ανάμεσα στο Logo και την άκρη */
+}
+
+/* Η λίστα με τα links (Home, Amenities κλπ) */
+.nav-links ul { 
+    list-style: none; 
+    display: flex; 
+    margin: 0 auto; /* Κεντράρει τη λίστα ανάμεσα στο Logo και το Κουμπί */
+    gap: 30px; /* Απόσταση μεταξύ των links */
+    padding: 0;
+}
+
+.nav-links ul li { 
+    margin: 0; 
+}
+
+.nav-links ul li a { 
+    text-decoration: none; 
+    color: var(--text-color); 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+}
+
+.nav-links ul li a:hover { 
+    color: var(--accent-color); 
+}
+
+/* Το κουμπί Book Your Stay (Δεξιά) */
+.btn-book-nav { 
+    background: var(--accent-color); 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: all 0.3s ease; 
+    margin-left: 0;
+    white-space: nowrap; /* Για να μην σπάει σε 2 γραμμές */
+}
+
+.btn-book-nav:hover { 
+    background: var(--hover-color); 
+    transform: translateY(-2px); 
+}
 
 /* --- Hero Section --- ΕΝΗΜΕΡΩΜΕΝΟ --- */
 /* --- Hero Section (Με Animation & Σκίαση) --- */
@@ -259,6 +328,7 @@ footer { background: #333; color: white; text-align: center; padding: 20px 0; bo
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
