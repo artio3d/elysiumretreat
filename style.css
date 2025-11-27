@@ -33,46 +33,33 @@ nav ul li a:hover { color: var(--accent-color); }
 
 /* --- Hero Section --- ΕΝΗΜΕΡΩΜΕΝΟ --- */
 #hero {
-    /* Αφαιρέσαμε το background: url(...) από εδώ */
+    background: url('_NVD6519ok.JPG') no-repeat center center/cover;
     height: 100vh;
-    position: relative; /* Απαραίτητο για να λειτουργήσει η εικόνα ως φόντο */
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Στοίχιση αριστερά */
     align-items: center;
-    text-align: left;
+    text-align: left; /* Στοίχιση κειμένου αριστερά */
     padding-top: 80px;
-    overflow: hidden; /* Κρύβει οτιδήποτε περισσεύει */
-}
-
-/* ΝΕΟ: Στυλ για την εικόνα-φόντο */
-.hero-background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Κάνει την εικόνα να καλύπτει όλο τον χώρο χωρίς παραμόρφωση */
-    z-index: -1; /* Την στέλνει πίσω από το κείμενο */
 }
 
 .hero-text {
-    padding-left: 5%;
-    max-width: 600px;
-    z-index: 1; /* Διασφαλίζει ότι το κείμενο είναι πάνω από την εικόνα */
+    /* Αφαιρέθηκε το background-color */
+    padding-left: 5%; /* Προσθέτει απόσταση από την άκρη */
+    max-width: 600px; /* Περιορίζει το πλάτος του κειμένου */
 }
 
 .hero-text h1 {
-    font-size: 4.5rem;
-    color: var(--text-color);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+    font-size: 4.5rem; /* Μεγαλύτερη γραμματοσειρά */
+    color: var(--text-color); /* Σκούρο χρώμα */
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά για ευκρίνεια */
     line-height: 1.1;
     margin-bottom: 15px;
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    color: var(--text-color);
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
+    color: var(--primary-bg); /* Σκούρο χρώμα */
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά */
 }
 /* --- ΤΕΛΟΣ ΕΝΗΜΕΡΩΣΗΣ HERO --- */
 
@@ -204,4 +191,3 @@ footer { background: #333; color: white; text-align: center; padding: 20px 0; bo
         padding-bottom: 80px; /* Χώρος αν υπάρχουν sticky buttons */
     }
 }
-
