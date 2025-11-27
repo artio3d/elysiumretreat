@@ -119,4 +119,89 @@ nav ul li a:hover { color: var(--accent-color); }
 /* --- Footer --- */
 footer { background: #333; color: white; text-align: center; padding: 20px 0; border: none; }
 
+/* --- MOBILE RESPONSIVENESS --- */
+/* Πρόσθεσε αυτό στο ΤΕΛΟΣ του style.css */
+
+@media (max-width: 900px) {
+    
+    /* 1. Γενικές Ρυθμίσεις για Κινητά */
+    h1 { font-size: 2.5rem; } /* Μικρότερος τίτλος */
+    h2 { font-size: 1.8rem; }
+    section { padding: 50px 0; } /* Λιγότερο κενό ανάμεσα στα sections */
+
+    /* 2. Header (Μενού) */
+    #header .container {
+        flex-direction: column; /* Τα στοιχεία το ένα κάτω από το άλλο */
+        height: auto;
+        padding: 15px;
+    }
+
+    .logo { margin-bottom: 10px; }
+
+    nav {
+        width: 100%;
+        overflow-x: auto; /* Επιτρέπει οριζόντιο σκρολ στο μενού αν δεν χωράει */
+        padding-bottom: 10px;
+    }
+
+    nav ul {
+        padding: 0;
+        justify-content: center;
+        flex-wrap: wrap; /* Επιτρέπει στα links να πάνε από κάτω αν δεν χωράνε */
+        gap: 15px;
+    }
+
+    nav ul li { margin-left: 0; } /* Αφαίρεση περιθωρίου */
+    
+    .btn-book-nav {
+        margin-top: 10px;
+        width: 100%; /* Το κουμπί πιάνει όλο το πλάτος */
+        text-align: center;
+    }
+
+    /* 3. Hero Section (Κεντρική Εικόνα) */
+    #hero {
+        justify-content: center; /* Κεντράρισμα στο κινητό */
+        align-items: center;
+        padding-top: 180px; /* Χώρος για το header που ψήλωσε */
+    }
+
+    .hero-text {
+        padding-left: 0;
+        text-align: center; /* Κεντράρισμα κειμένου */
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* Πολύ πιο μικρό για να χωράει */
+    }
+
+    /* Απόκρυψη της διπλής εικόνας αν υπάρχει στο HTML */
+    .hero-background-image {
+        display: none; 
+    }
+
+    /* 4. Grids (About & Booking) - Να γίνουν μονή στήλη */
+    .about-content, 
+    .booking-options {
+        grid-template-columns: 1fr; /* Μία στήλη αντί για δύο */
+        gap: 30px;
+    }
+
+    /* 5. Slideshow (Gallery) */
+    .prev, .next {
+        padding: 10px; /* Μικρότερα βελάκια */
+    }
+
+    /* 6. Amenities & Parking */
+    .amenities-grid, 
+    .area-grid {
+        grid-template-columns: 1fr; /* Μία στήλη στο κινητό */
+    }
+    
+    /* 7. Footer */
+    footer {
+        padding-bottom: 80px; /* Χώρος αν υπάρχουν sticky buttons */
+    }
+}
 
