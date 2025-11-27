@@ -21,7 +21,7 @@ h2 { font-size: 2.2rem; font-weight: 700; }
 
 /* --- Header & Navigation --- */
 #header { background: rgba(248, 245, 242, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: background 0.3s ease, box-shadow 0.3s ease; }
-#header .container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+#header .container { display: flex; justify-content: center; align-items: center; height: 80px; gap: 80px;  }
 .logo a { text-decoration: none; color: var(--text-color); font-size: 1.5rem; font-weight: 700; }
 .logo span { font-weight: 400; color: #8A817C; }
 nav ul { list-style: none; display: flex; }
@@ -36,7 +36,7 @@ nav ul li a:hover { color: var(--accent-color); }
 #hero {
     /* Προσθέσαμε ένα linear-gradient για να σκουρύνει λίγο η εικόνα */
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                url('hero-bg.JPG') no-repeat center center/cover;
+                url('hero-bg.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: flex-start;
@@ -191,86 +191,72 @@ footer { background: #333; color: white; text-align: center; padding: 20px 0; bo
 /* --- MOBILE RESPONSIVENESS --- */
 /* Πρόσθεσε αυτό στο ΤΕΛΟΣ του style.css */
 
+/* --- MOBILE MENU (HAMBURGER) --- */
+
+/* 1. Ρυθμίσεις για το εικονίδιο (κρυμμένο σε PC, ορατό σε κινητό) */
+.hamburger-menu {
+    display: none; /* Κρυμμένο στα PC */
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* 2. Ρυθμίσεις όταν η οθόνη είναι μικρή (Κινητά/Tablet) */
 @media (max-width: 900px) {
     
-    /* 1. Γενικές Ρυθμίσεις για Κινητά */
-    h1 { font-size: 2.5rem; } /* Μικρότερος τίτλος */
-    h2 { font-size: 1.8rem; }
-    section { padding: 50px 0; } /* Λιγότερο κενό ανάμεσα στα sections */
-
-    /* 2. Header (Μενού) */
-    #header .container {
-        flex-direction: column; /* Τα στοιχεία το ένα κάτω από το άλλο */
-        height: auto;
-        padding: 15px;
+    .hamburger-menu {
+        display: block; /* Εμφάνιση του κουμπιού Menu */
     }
 
-    .logo { margin-bottom: 10px; }
-
-    nav {
+    /* Απόκρυψη του κανονικού μενού */
+    .nav-links {
+        position: fixed;
+        top: 80px; /* Όσο είναι το ύψος του header */
+        right: -100%; /* Το κρύβουμε έξω από την οθόνη δεξιά */
         width: 100%;
-        overflow-x: auto; /* Επιτρέπει οριζόντιο σκρολ στο μενού αν δεν χωράει */
-        padding-bottom: 10px;
-    }
-
-    nav ul {
-        padding: 0;
-        justify-content: center;
-        flex-wrap: wrap; /* Επιτρέπει στα links να πάνε από κάτω αν δεν χωράνε */
-        gap: 15px;
-    }
-
-    nav ul li { margin-left: 0; } /* Αφαίρεση περιθωρίου */
-    
-    .btn-book-nav {
-        margin-top: 10px;
-        width: 100%; /* Το κουμπί πιάνει όλο το πλάτος */
-        text-align: center;
-    }
-
-    /* 3. Hero Section (Κεντρική Εικόνα) */
-    #hero {
-        justify-content: center; /* Κεντράρισμα στο κινητό */
+        height: calc(100vh - 80px);
+        background-color: var(--primary-bg); /* Το χρώμα του φόντου */
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding-top: 180px; /* Χώρος για το header που ψήλωσε */
+        justify-content: center;
+        transition: right 0.4s ease; /* Εφέ κύλισης */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
 
-    .hero-text {
-        padding-left: 0;
-        text-align: center; /* Κεντράρισμα κειμένου */
+    /* Όταν προστεθεί η κλάση 'active', το μενού εμφανίζεται */
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 30px; /* Απόσταση μεταξύ των links */
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-links ul li {
+        margin: 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 1.5rem; /* Μεγαλύτερα γράμματα στο κινητό */
+    }
+
+    /* Προσαρμογή του Header Container */
+    #header .container {
+        justify-content: space-between;
         padding: 0 20px;
     }
-
-    .hero-text h1 {
-        font-size: 2.2rem; /* Πολύ πιο μικρό για να χωράει */
-    }
-
-    /* Απόκρυψη της διπλής εικόνας αν υπάρχει στο HTML */
-    .hero-background-image {
-        display: none; 
-    }
-
-    /* 4. Grids (About & Booking) - Να γίνουν μονή στήλη */
-    .about-content, 
-    .booking-options {
-        grid-template-columns: 1fr; /* Μία στήλη αντί για δύο */
-        gap: 30px;
-    }
-
-    /* 5. Slideshow (Gallery) */
-    .prev, .next {
-        padding: 10px; /* Μικρότερα βελάκια */
-    }
-
-    /* 6. Amenities & Parking */
-    .amenities-grid, 
-    .area-grid {
-        grid-template-columns: 1fr; /* Μία στήλη στο κινητό */
-    }
     
-    /* 7. Footer */
-    footer {
-        padding-bottom: 80px; /* Χώρος αν υπάρχουν sticky buttons */
+    /* Hero Text Fix (όπως το είχαμε) */
+    .hero-text h1 { font-size: 2.5rem; }
+    #hero { justify-content: center; padding-top: 150px; }
+    
+    /* Amenities & Parking Grid Fix */
+    .amenities-grid, .area-grid, .about-content, .booking-options {
+        grid-template-columns: 1fr;
     }
 }
 
