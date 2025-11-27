@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Hamburger Menu Logic ---
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+
+    // Όταν πατάς το κουμπί Menu
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Αλλαγή εικονιδίου από γραμμές σε 'X' (προαιρετικό αλλά ωραίο)
+        const icon = hamburger.querySelector('ion-icon');
+        if (navLinks.classList.contains('active')) {
+            icon.setAttribute('name', 'close-outline');
+        } else {
+            icon.setAttribute('name', 'menu-outline');
+        }
+    });
+
+    // Όταν πατάς ένα link, να κλείνει το μενού αυτόματα
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.querySelector('ion-icon').setAttribute('name', 'menu-outline');
+        });
+    });
+
     // --- Sticky Header ---
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
