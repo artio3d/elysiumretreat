@@ -32,34 +32,64 @@ nav ul li a:hover { color: var(--accent-color); }
 .btn-book-nav:hover { background: var(--hover-color); transform: translateY(-2px); }
 
 /* --- Hero Section --- ΕΝΗΜΕΡΩΜΕΝΟ --- */
+/* --- Hero Section (Με Animation & Σκίαση) --- */
 #hero {
-    background: url('hero-bg.JPG') no-repeat center center/cover;
+    /* Προσθέσαμε ένα linear-gradient για να σκουρύνει λίγο η εικόνα */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('hero-bg.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
-    justify-content: flex-start; /* Στοίχιση αριστερά */
+    justify-content: flex-start;
     align-items: center;
-    text-align: left; /* Στοίχιση κειμένου αριστερά */
+    text-align: left;
     padding-top: 80px;
 }
 
 .hero-text {
-    /* Αφαιρέθηκε το background-color */
-    padding-left: 5%; /* Προσθέτει απόσταση από την άκρη */
-    max-width: 600px; /* Περιορίζει το πλάτος του κειμένου */
+    padding-left: 5%;
+    max-width: 700px; /* Λίγο μεγαλύτερο πλάτος */
 }
 
+/* Στυλ για τον Τίτλο (H1) */
 .hero-text h1 {
-    font-size: 4.5rem; /* Μεγαλύτερη γραμματοσειρά */
-    color: var(--text-color); /* Σκούρο χρώμα */
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά για ευκρίνεια */
+    font-size: 4.5rem;
+    color: #FFFFFF; /* Καθαρό λευκό */
     line-height: 1.1;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    
+    /* ΕΦΕ ΣΚΙΑΣΗΣ (Το "Fade" γύρω από τα γράμματα) */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
+    
+    /* ANIMATION: Ξεκινάει αόρατο */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards; /* Διάρκεια 1 δευτερόλεπτο */
 }
 
+/* Στυλ για την Περιγραφή (P) */
 .hero-text p {
-    font-size: 1.1rem;
-    color: var(--primary-bg); /* Σκούρο χρώμα */
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2); /* Διακριτική σκιά */
+    font-size: 1.2rem;
+    color: #F8F5F2; /* Σπασμένο λευκό */
+    font-weight: 500;
+    
+    /* ΕΦΕ ΣΚΙΑΣΗΣ */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    
+    /* ANIMATION: Ξεκινάει αόρατο και περιμένει */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards; /* 0.6s καθυστέρηση για να βγει μετά τον τίτλο */
+}
+
+/* --- ΟΡΙΣΜΟΣ ΤΗΣ ΚΙΝΗΣΗΣ (Keyframes) --- */
+/* Αυτός ο κώδικας δημιουργεί την κίνηση από κάτω προς τα πάνω */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Ξεκινάει 40px πιο κάτω */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Καταλήγει στην κανονική θέση */
+    }
 }
 /* --- ΤΕΛΟΣ ΕΝΗΜΕΡΩΣΗΣ HERO --- */
 
@@ -191,4 +221,5 @@ footer { background: #333; color: white; text-align: center; padding: 20px 0; bo
         padding-bottom: 80px; /* Χώρος αν υπάρχουν sticky buttons */
     }
 }
+
 
